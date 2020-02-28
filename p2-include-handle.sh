@@ -19,39 +19,45 @@ fi
 ##  if you want to delete the entire iso and its nfs export to free disk space
 ##########################################################################
 ##########################################################################
-_unhandle_iso  $CLONEZILLA_X64  $CLONEZILLA_X64_URL;
-_unhandle_iso  $CLONEZILLA_X86  $CLONEZILLA_X86_URL;
-_unhandle_iso  $DEBIAN_X64  $DEBIAN_X64_URL;
-_unhandle_iso  $DEBIAN_X86  $DEBIAN_X86_URL;
-_unhandle_iso  $DEFTZ_X64  $DEFTZ_X64_URL  ,gid=root,uid=root,norock,mode=292;
-_unhandle_iso  $DEFT_X64  $DEFT_X64_URL;
-_unhandle_iso  $DEVUAN_X64  $DEVUAN_X64_URL;
-_unhandle_iso  $DEVUAN_X86  $DEVUAN_X86_URL;
-handle_iso  $ESET_SYSRESCUE_X86  $ESET_SYSRESCUE_X86_URL;
-handle_iso  $FEDORA_X64  $FEDORA_X64_URL;
-_unhandle_iso  $GNURADIO_X64  $GNURADIO_X64_URL;
-_unhandle_iso  $KALI_X64  $KALI_X64_URL;
-handle_iso  $KASPERSKY_RESCUE_X86  $KASPERSKY_RESCUE_X86_URL  timestamping;
-_unhandle_iso  $KNOPPIX_X86  $KNOPPIX_X86_URL;
-_unhandle_iso  $LUBUNTU_DAILY_X64  $LUBUNTU_DAILY_X64_URL  timestamping;
-_unhandle_iso  $LUBUNTU_LTS_X64  $LUBUNTU_LTS_X64_URL;
-_unhandle_iso  $LUBUNTU_LTS_X86  $LUBUNTU_LTS_X86_URL;
-_unhandle_iso  $LUBUNTU_X64  $LUBUNTU_X64_URL;
-_unhandle_iso  $LUBUNTU_X86  $LUBUNTU_X86_URL;
-_unhandle_iso  $MINT_X64  $MINT_X64_URL;
-_unhandle_iso  $PARROT_FULL_X64  $PARROT_FULL_X64_URL;
-_unhandle_iso  $PARROT_LITE_X64  $PARROT_LITE_X64_URL;
-_unhandle_iso  $PENTOO_BETA_X64  $PENTOO_BETA_X64_URL  timestamping;
-_unhandle_iso  $PENTOO_X64  $PENTOO_X64_URL  timestamping;
-_unhandle_iso  $RPDESKTOP_X86  $RPDESKTOP_X86_URL  timestamping;
-_unhandle_iso  $SYSTEMRESCUE_X86  $SYSTEMRESCUE_X86_URL;
-handle_iso  $TINYCORE_X64  $TINYCORE_X64_URL  timestamping;
-_unhandle_iso  $TINYCORE_X86  $TINYCORE_X86_URL  timestamping;
-_unhandle_iso  $UBUNTU_DAILY_X64  $UBUNTU_DAILY_X64_URL  timestamping;
-_unhandle_iso  $UBUNTU_LTS_X64  $UBUNTU_LTS_X64_URL;
-_unhandle_iso  $UBUNTU_LTS_X86  $UBUNTU_LTS_X86_URL;
-_unhandle_iso  $UBUNTU_STUDIO_DAILY_X64  $UBUNTU_STUDIO_DAILY_X64_URL  timestamping;
-_unhandle_iso  $UBUNTU_STUDIO_X64  $UBUNTU_STUDIO_X64_URL;
+
+handle_iso $UBUNTU_SERVER $UBUNTU_SERVER_URL;
+
+handle_iso $UBUNTU_SERVER_X86 $UBUNTU_SERVER_X86_URL;
+handle_iso $UBUNTU_SERVER_X64 $UBUNTU_SERVER_X64_URL;
+
+# _unhandle_iso  $CLONEZILLA_X64  $CLONEZILLA_X64_URL;
+#  _unhandle_iso  $CLONEZILLA_X86  $CLONEZILLA_X86_URL;
+#  _unhandle_iso  $DEBIAN_X64  $DEBIAN_X64_URL;
+#  _unhandle_iso  $DEBIAN_X86  $DEBIAN_X86_URL;
+#  _unhandle_iso  $DEFTZ_X64  $DEFTZ_X64_URL  ,gid=root,uid=root,norock,mode=292;
+#  _unhandle_iso  $DEFT_X64  $DEFT_X64_URL;
+#  _unhandle_iso  $DEVUAN_X64  $DEVUAN_X64_URL;
+#  _unhandle_iso  $DEVUAN_X86  $DEVUAN_X86_URL;
+#  _unhandle_iso  $ESET_SYSRESCUE_X86  $ESET_SYSRESCUE_X86_URL;
+#  _unhandle_iso  $FEDORA_X64  $FEDORA_X64_URL;
+#  _unhandle_iso  $GNURADIO_X64  $GNURADIO_X64_URL;
+#  _unhandle_iso  $KALI_X64  $KALI_X64_URL;
+#  _unhandle_iso  $KASPERSKY_RESCUE_X86  $KASPERSKY_RESCUE_X86_URL  timestamping;
+#  _unhandle_iso  $KNOPPIX_X86  $KNOPPIX_X86_URL;
+#  _unhandle_iso  $LUBUNTU_DAILY_X64  $LUBUNTU_DAILY_X64_URL  timestamping;
+#  _unhandle_iso  $LUBUNTU_LTS_X64  $LUBUNTU_LTS_X64_URL;
+#  _unhandle_iso  $LUBUNTU_LTS_X86  $LUBUNTU_LTS_X86_URL;
+#  _unhandle_iso  $LUBUNTU_X64  $LUBUNTU_X64_URL;
+#  _unhandle_iso  $LUBUNTU_X86  $LUBUNTU_X86_URL;
+#  _unhandle_iso  $MINT_X64  $MINT_X64_URL;
+#  _unhandle_iso  $PARROT_FULL_X64  $PARROT_FULL_X64_URL;
+#  _unhandle_iso  $PARROT_LITE_X64  $PARROT_LITE_X64_URL;
+#  _unhandle_iso  $PENTOO_BETA_X64  $PENTOO_BETA_X64_URL  timestamping;
+#  _unhandle_iso  $PENTOO_X64  $PENTOO_X64_URL  timestamping;
+#  _unhandle_iso  $RPDESKTOP_X86  $RPDESKTOP_X86_URL  timestamping;
+#  _unhandle_iso  $SYSTEMRESCUE_X86  $SYSTEMRESCUE_X86_URL;
+#  _unhandle_iso  $TINYCORE_X64  $TINYCORE_X64_URL  timestamping;
+#  _unhandle_iso  $TINYCORE_X86  $TINYCORE_X86_URL  timestamping;
+#  _unhandle_iso  $UBUNTU_DAILY_X64  $UBUNTU_DAILY_X64_URL  timestamping;
+#  _unhandle_iso  $UBUNTU_LTS_X64  $UBUNTU_LTS_X64_URL;
+#  _unhandle_iso  $UBUNTU_LTS_X86  $UBUNTU_LTS_X86_URL;
+#  _unhandle_iso  $UBUNTU_STUDIO_DAILY_X64  $UBUNTU_STUDIO_DAILY_X64_URL  timestamping;
+#  _unhandle_iso  $UBUNTU_STUDIO_X64  $UBUNTU_STUDIO_X64_URL;
 handle_iso  $UBUNTU_X64  $UBUNTU_X64_URL;
 
 #custom#
@@ -80,10 +86,10 @@ handle_kernel  $ARCH_NETBOOT_X64  $ARCH_NETBOOT_X64_URL  timestamping;
 ##  you don't want to download, mount, export
 ##########################################################################
 ##########################################################################
-_unhandle_zip_img  $PI_CORE   $PI_CORE_URL;
-_unhandle_zip_img  $RPD_BASIC $RPD_BASIC_URL timestamping;
-_unhandle_zip_img  $RPD_FULL  $RPD_FULL_URL  timestamping;
-_unhandle_zip_img  $RPD_LITE  $RPD_LITE_URL  timestamping;
+# _unhandle_zip_img  $PI_CORE   $PI_CORE_URL;
+# _unhandle_zip_img  $RPD_BASIC $RPD_BASIC_URL timestamping;
+# _unhandle_zip_img  $RPD_FULL  $RPD_FULL_URL  timestamping;
+# _unhandle_zip_img  $RPD_LITE  $RPD_LITE_URL  timestamping;
 
 ##########################################################################
 ##########################################################################

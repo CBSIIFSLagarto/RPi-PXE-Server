@@ -1144,5 +1144,7 @@ if [ -d "$SRC_IMG" ]; then
 fi
 ######################################################################
 sync
+echo "DST NFS = $DST_NFS_ETH0"
+echo "$DST_NFS_ETH0/$UBUNTU_SERVER_X86"
 echo -e "\e[32mDone.\e[0m";
 echo -e "\e[1;31mPlease reboot\e[0m";

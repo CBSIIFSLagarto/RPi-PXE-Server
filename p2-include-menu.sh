@@ -11,6 +11,76 @@ fi
 
 
 #========== BEGIN ==========
+if [ -f "$FILE_MENU" ]; then # \
+#&& [ -f "$DST_NFS_ETH0/$UBUNTU_SERVER/install" ]; then
+    echo  -e "\e[36m    add $UBUNTU_SERVER\e[0m";
+    sudo sh -c "cat << EOF  >> $FILE_MENU
+    ########################################    
+
+label linux
+	kernel $FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X64/install/netboot/ubuntu-installer/amd64/linux 
+    #    kernel ubuntu-installer/amd64/linux
+        append ks=http://192.168.1.3/iso/ks.cfg root=/$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X64 BOOT=nfs vga=normal initrd=$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X64/install/netboot/ubuntu-installer/amd64/initrd.gz -- 
+		#ramdisk_size=16432 root=/dev/rd/0 rw  --
+EOF";
+fi
+#=========== END ===========
+
+#========== BEGIN ==========
+if [ -f "$FILE_MENU" ]; then # \
+#&& [ -f "$DST_NFS_ETH0/$UBUNTU_SERVER/install" ]; then
+    echo  -e "\e[36m    add $UBUNTU_SERVER\e[0m";
+    sudo sh -c "cat << EOF  >> $FILE_MENU
+    ########################################    
+    LABEL $UBUNTU_SERVER
+        menu label ^Install Ubuntu Server 
+		KERNEL $FILE_BASE$NFS_ETH0/$UBUNTU_SERVER/install/netboot/ubuntu-installer/i386/linux 
+		APPEND ks=$IP_ETH0/iso/ks.cfg vga=normal initrd=$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER/install/netboot/ubuntu-installer/i386/initrd.gz #/install/vmlinuz netboot=nfs nfsroot=$IP_ETH0/$UBUNTU_SERVER/ file=/cdrom/preseed/ubuntu-server.seed  --
+		# ks=cdrom:/ks.cfg
+
+# kernel $FILE_BASE$NFS_ETH0/$UBUNTU_SERVER/vmlinuz
+# append initrd=$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER/initrd boot=casper netboot=nfs nfsroot=$IP_ETH0:$DST_NFS_ETH0/$UBUNTU_SERVER
+# netboot/nfs/$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER/ splash toram ---
+
+EOF";
+fi
+#=========== END ===========
+
+
+#========== BEGIN ==========
+if [ -f "$FILE_MENU" ]; then #\
+#&& [ -f "$DST_NFS_ETH0/$UBUNTU_SERVER_X86/install" ]; then
+    echo  -e "\e[36m    add $UBUNTU_SERVER_X86\e[0m";
+    sudo sh -c "cat << EOF  >> $FILE_MENU
+    ########################################    
+    LABEL $UBUNTU_SERVER_X86
+        menu label ^Install Ubuntu 16.04 - 32bits
+		KERNEL $FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X86/install/netboot/ubuntu-installer/i386/linux
+		# APPEND /install/vmlinuz auto=true interface=eth0 hostname=cluster domain=home url=$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X86/preseed/ubuntu-server.seed initrd=$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X86/install/netboot/ubuntu-installer/i386/initrd.gz --
+
+# kernel $FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X86/vmlinuz
+append initrd=$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X86/initrd boot=casper netboot=nfs nfsroot=$IP_ETH0:$DST_NFS_ETH0/$UBUNTU_SERVER_X86 netboot/nfs/$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X86/ splash toram ---
+
+EOF";
+fi
+#=========== END ===========
+
+
+#========== BEGIN ==========
+if [ -f "$FILE_MENU" ]; then # \
+# && [ -f "$DST_NFS_ETH0/$UBUNTU_SERVER_X64" ]; then
+    echo  -e "\e[36m    add $UBUNTU_SERVER_X64\e[0m";
+    sudo sh -c "cat << EOF  >> $FILE_MENU
+    ########################################    
+    LABEL $UBUNTU_SERVER_X64
+        menu label ^Install Ubuntu 18.04    
+		kernel $FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X64/install/vmlinuz
+		append initrd=$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X64/install/initrd boot=casper netboot=nfs nfsroot=$IP_ETH0:$DST_NFS_ETH0/$UBUNTU_SERVER_X64 netboot/nfs/$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X64/ splash toram ---
+EOF";
+fi
+#=========== END ===========
+
+#========== BEGIN ==========
 if [ -f "$FILE_MENU" ] \
 && [ -f "$DST_NFS_ETH0/$ARCH_NETBOOT_X64/kernel" ]; then
     echo  -e "\e[36m    add $ARCH_NETBOOT_X64\e[0m";

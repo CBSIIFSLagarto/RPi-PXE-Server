@@ -64,6 +64,21 @@ fi
 ##  update the url, if iso is outdated
 ##########################################################################
 ##########################################################################
+
+UBUNTU_SERVER=ubuntu-server1
+UBUNTU_SERVER_URL=http://releases.ubuntu.com/16.04/ubuntu-16.04.6-server-i386.iso
+
+
+UBUNTU_SERVER_X86=ubuntu-server-86
+UBUNTU_SERVER_X86_URL=http://releases.ubuntu.com/16.04/ubuntu-16.04.6-server-i386.iso
+
+UBUNTU_SERVER_X64=ubuntu-server-64
+UBUNTU_SERVER_X64_URL=http://releases.ubuntu.com/16.04/ubuntu-16.04.6-server-amd64.iso
+
+
+
+
+
 ARCH_NETBOOT_X64=arch-netboot-x64
 ARCH_NETBOOT_X64_URL=https://www.archlinux.org/static/netboot/ipxe.lkrn
 
