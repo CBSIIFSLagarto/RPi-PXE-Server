@@ -11,17 +11,35 @@ fi
 
 
 #========== BEGIN ==========
+# if [ -f "$FILE_MENU" ]; then # \
+#&& [ -f "$DST_NFS_ETH0/$UBUNTU_SERVER/install" ]; then
+#    echo  -e "\e[36m    add $UBUNTU_SERVER\e[0m";
+#    sudo sh -c "cat << EOF  >> $FILE_MENU
+    ########################################    
+
+#label linux
+#    menu ^ Linux preseed
+#	kernel $FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X64/install/netboot/ubuntu-installer/amd64/linux 
+    #    kernel ubuntu-installer/amd64/linux
+#        append auto preseed/url=http://192.168.1.3/iso/ks1.cfg root=/$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X64 BOOT=nfs vga=normal initrd=$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X64/install/netboot/ubuntu-installer/amd64/initrd.gz -- 
+		#ramdisk_size=16432 root=/dev/rd/0 rw  --
+#EOF";
+#fi
+#=========== END ===========
+
+
+#========== BEGIN ==========
 if [ -f "$FILE_MENU" ]; then # \
 #&& [ -f "$DST_NFS_ETH0/$UBUNTU_SERVER/install" ]; then
     echo  -e "\e[36m    add $UBUNTU_SERVER\e[0m";
     sudo sh -c "cat << EOF  >> $FILE_MENU
     ########################################    
 
-label linux
-	kernel $FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X64/install/netboot/ubuntu-installer/amd64/linux 
-    #    kernel ubuntu-installer/amd64/linux
-        append ks=http://192.168.1.3/iso/ks.cfg root=/$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X64 BOOT=nfs vga=normal initrd=$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X64/install/netboot/ubuntu-installer/amd64/initrd.gz -- 
-		#ramdisk_size=16432 root=/dev/rd/0 rw  --
+label Linux kickstart
+    menu ^ Linux kickstart
+	kernel $FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X64/install/netboot/ubuntu-installer/amd64/linux
+    append ks=http://$IP_ETH0/iso/ks.cfg root=/$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X64 BOOT=nfs vga=normal initrd=$FILE_BASE$NFS_ETH0/$UBUNTU_SERVER_X64/install/netboot/ubuntu-installer/amd64/initrd.gz -- 
+	# ramdisk_size=16432 root=/dev/rd/0 rw  --
 EOF";
 fi
 #=========== END ===========
